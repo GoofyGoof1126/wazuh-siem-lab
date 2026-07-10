@@ -22,6 +22,10 @@ my CV.
   in Threat Hunting dashboard
 - MITRE ATT&CK telemetry active on domain controller
 - CIS Windows Server 2019 benchmark SCA scan running
+- - Rule 100002: After-hours logon detection on DC 
+  (MITRE T1078)
+- Rule 100001 tuned: same_field constraint added to 
+  reduce false positives, before/after documented
 
 ## Problems Encountered and Resolved
 ### 1. Filebeat installation failure
