@@ -26,6 +26,8 @@ my CV.
   (MITRE T1078)
 - Rule 100001 tuned: same_field constraint added to 
   reduce false positives, before/after documented
+- Rule 100001: Brute force detection — 5+ failed logons 
+  from same source IP in 60 seconds (MITRE T1110)
 
 ## Problems Encountered and Resolved
 ### 1. Filebeat installation failure
