@@ -71,8 +71,6 @@ allowing traffic to lab subnet.
   60 seconds triggers alert, tested against DC01-LAB
 - **Month 4:** Kerberoasting detection via Event ID 4769 
   forwarded to this SIEM
-- **Month 4:** Kerberoasting detection via Event ID 4769 
-  forwarded to this SIEM
 - **Month 7:** Sentinel analytics rules built on same 
   detection logic (frequency correlation, time-based 
   filtering)
