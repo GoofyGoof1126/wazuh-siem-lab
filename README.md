@@ -28,6 +28,11 @@ my CV.
   reduce false positives, before/after documented
 - Rule 100001: Brute force detection — 5+ failed logons 
   from same source IP in 60 seconds (MITRE T1110)
+- Linux auditd log forwarding from LinuxVM-LAB — 
+  identity, privilege escalation, sudo, and SSH 
+  config changes monitored
+- Rule 100003: Sudo privilege escalation detection 
+  on Linux host (MITRE T1548.003)
 
 ## Problems Encountered and Resolved
 ### 1. Filebeat installation failure
@@ -74,9 +79,43 @@ allowing traffic to lab subnet.
 - **Month 7:** Sentinel analytics rules built on same 
   detection logic (frequency correlation, time-based 
   filtering)
+- **Month 4:** Kerberoasting detection via Event ID 4769 
+  — DC01-LAB already enrolled and forwarding events
+- **Month 7:** Sentinel analytics rules built on same 
+  detection logic
+- auditd rules provide baseline for Month 8 container 
+  security work — same audit principles apply to 
+  container runtime monitoring
 
 ## What Would Have Happened Without This
 No visibility into authentication events on the domain 
 controller. The Kerberoasting attack in Month 4 would be 
 undetectable. Every subsequent detection rule in this roadmap 
 depends on this pipeline being operational.
+
+**Without rule 100001 (brute force):**
+An attacker running a password spray against DC01-LAB 
+would generate dozens of Event ID 4625 entries that 
+appear as individual low-severity events. No automated 
+alert would fire. An analyst would need to manually 
+correlate the pattern — something that rarely happens 
+at 2am on a Friday.
+
+**Without rule 100002 (after-hours logon):**
+A threat actor using stolen credentials to access the 
+domain controller outside business hours would appear 
+as a normal successful logon event (level 3). No 
+escalation would occur. The compromise could persist 
+for days before discovery.
+
+**Without rule 100003 (sudo escalation):**
+An attacker with a low-privilege shell on LinuxVM-LAB 
+who escalated to root via sudo would be invisible. 
+The Wazuh manager itself would be compromised with no 
+detection — effectively blinding the entire SIEM.
+
+**Without auditd forwarding:**
+Changes to /etc/passwd, /etc/shadow, or /etc/sudoers 
+on LinuxVM-LAB would be undetected. An attacker 
+establishing persistence by adding a backdoor user 
+would leave no trail in Wazuh.
