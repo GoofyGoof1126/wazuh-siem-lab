@@ -79,11 +79,7 @@ allowing traffic to lab subnet.
 - **Month 7:** Sentinel analytics rules built on same 
   detection logic (frequency correlation, time-based 
   filtering)
-- **Month 4:** Kerberoasting detection via Event ID 4769 
-  — DC01-LAB already enrolled and forwarding events
-- **Month 7:** Sentinel analytics rules built on same 
-  detection logic
-- auditd rules provide baseline for Month 8 container 
+- **Month 8:** auditd rules provide baseline for container 
   security work — same audit principles apply to 
   container runtime monitoring
 
