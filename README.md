@@ -72,8 +72,6 @@ host-only adapter inside DC01-LAB network settings.
 allowing traffic to lab subnet.
 
 ## What This Enables
-- **Week 3:** Custom detection rule — 5+ failed logons in 
-  60 seconds triggers alert, tested against DC01-LAB
 - **Month 4:** Kerberoasting detection via Event ID 4769 
   forwarded to this SIEM
 - **Month 7:** Sentinel analytics rules built on same 
