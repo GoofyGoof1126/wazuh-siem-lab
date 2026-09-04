@@ -22,7 +22,7 @@ my CV.
 | 100004 | T1548.003 Sudo Caching | Known admin sudo commands (noise reduction) | 3 |
 
 ## Lab Architecture
-![SIEM Topology](architecture/wazuh-siem-topology.png)
+![SIEM Topology](architecture/wazuh-siem-topology.drawio.png)
 
 Two-node lab: Wazuh all-in-one manager on LinuxVM-LAB 
 collecting Windows Security Event Logs from DC01-LAB 
