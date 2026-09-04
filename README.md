@@ -50,6 +50,9 @@ AD and Linux attack patterns.
   config changes monitored
 - Rule 100003: Sudo privilege escalation detection 
   on Linux host (MITRE T1548.003)
+- Rule 100004: Noise reduction rule — known admin sudo 
+  commands downgraded to level 3, separating operational 
+  noise from genuine privilege escalation alerts
 
 ## Problems Encountered and Resolved
 ### 1. Filebeat installation failure
