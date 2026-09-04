@@ -13,6 +13,23 @@ my CV.
 | LinuxVM-LAB | Wazuh Manager + Indexer + Dashboard | 192.168.56.13 |
 | DC01-LAB | Monitored Windows Agent | 192.168.56.10 |
 
+## Detection Coverage Summary
+| Rule | MITRE Technique | What It Catches | Severity |
+|---|---|---|---|
+| 100001 | T1110 Brute Force | 5+ failed logons from same IP in 60s | 10 |
+| 100002 | T1078 Valid Accounts | Successful DC logon outside business hours | 10 |
+| 100003 | T1548.003 Sudo Caching | Unexpected sudo execution on Linux host | 12 |
+| 100004 | T1548.003 Sudo Caching | Known admin sudo commands (noise reduction) | 3 |
+
+## Lab Architecture
+![SIEM Topology](architecture/wazuh-siem-topology.png)
+
+Two-node lab: Wazuh all-in-one manager on LinuxVM-LAB 
+collecting Windows Security Event Logs from DC01-LAB 
+(domain controller) and Linux auditd logs from its own 
+host. Custom detection rules cover the three most common 
+AD and Linux attack patterns.
+
 ## What Was Built
 - Wazuh 4.9.2 all-in-one installation (indexer, manager, 
   Filebeat, dashboard)
