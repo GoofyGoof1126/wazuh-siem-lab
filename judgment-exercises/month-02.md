@@ -61,3 +61,10 @@ escalating — not realising that every minute spent
 preparing to make a phone call is a minute an attacker
 uses to entrench themselves. The phone call and the
 investigation run in parallel, not in sequence.
+
+## IR Phase Mapping (Added Month 3)
+- Monitoring the alert: Detection phase
+- Checking source IP and account: Analysis phase  
+- Calling Dennis Dyer: Containment decision point
+- Documenting with timestamps: Post-incident (Evidence preservation)
+- Flagging the missing after-hours policy: Post-incident (Lessons learned)
