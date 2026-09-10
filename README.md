@@ -53,6 +53,14 @@ AD and Linux attack patterns.
 - Rule 100004: Noise reduction rule — known admin sudo 
   commands downgraded to level 3, separating operational 
   noise from genuine privilege escalation alerts
+- Formal Vulnerability Assessment Report — 3 CIS 
+  benchmark findings with risk statements and 
+  remediation steps (security-reports/)
+- Incident Report — accidental Wazuh stack upgrade 
+  and recovery documentation (security-reports/)
+- Linux auditd persistence verified across reboots
+- Wazuh packages pinned with apt-mark hold to prevent 
+  accidental upgrades
 
 ## Problems Encountered and Resolved
 ### 1. Filebeat installation failure
